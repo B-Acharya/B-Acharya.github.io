@@ -66,18 +66,16 @@ social:
 analytics:
   provider               :  "google-universal" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          :  "G-L9JJ6JXK22"
 
 
 # Site Author
 author:
   name             : "Bhargav Acharya"
   avatar           : "profile.png"
-  bio              : "Machine learning and AI entusiast"
+  bio              : "Research Assitant"
   location         : "Bielefeld,Germany"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
   email            : "acharya28bhargav@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -96,7 +94,7 @@ author:
   linkedin         :
   orcid            : "http://orcid.org/yourorcidurl"
   pinterest        :
-  soundcloud       :
+  soundcloud       : "https://www.linkedin.com/in/bhargav-acharya/"
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
