@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : /images/logo.png
+title                    : images/logo.png
 title_separator          : "-"
 name                     : &name "Bhargav Acharya"
 description              : &description "personal description"
