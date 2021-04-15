@@ -1,20 +1,9 @@
 ---
-title: "Teaching experience 2"
+title: "Teaching Assistant - Basics Of Neural Networks"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "(under)graduate course"
+permalink: /teaching/SoSe-2021
+venue: "Bielefeld University, Technical Faculty"
+date: 2021
+location: "Bielefeld, Germany"
 ---
-
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
