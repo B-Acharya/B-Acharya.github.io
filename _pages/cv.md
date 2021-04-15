@@ -16,7 +16,7 @@ Education
 
 Work experience
 ======
-* March 2021- Present: Research Assistant,Bielefeld University
+* 2021- Present: Research Assistant,Bielefeld University
   * Multimodal Behaviour Processing group
 * 2018-2019: Software Engineer ,BOSCH (RBEI India)
   * Duties included: 
