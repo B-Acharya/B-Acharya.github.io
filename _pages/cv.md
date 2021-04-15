@@ -16,11 +16,9 @@ Education
 
 Work experience
 ======
-* March 2021- Present: Research Assistant
-  *Bielefeld University*
+* March 2021- Present: Research Assistant,Bielefeld University
   * Multimodal Behaviour Processing group
-* 2018-2019: Software Engineer 
-  *BOSCH (RBEI)*
+* 2018-2019: Software Engineer ,BOSCH (RBEI India)
   * Duties included: 
     * Worked in the integration team for embedded software development on ECU's .
     * Experience with customer software integration , Pin configuration, OS scheduling also testing of the final software on the ECU.
