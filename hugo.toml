@@ -1,0 +1,109 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Bacharya_space'
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  env = "production"
+  title = "Bacharya_space"
+  description = "Personal website and portfolio"
+  keywords = ["Blog", "Portfolio", "Projects", "Books", "Travel"]
+  author = "Me"
+  images = ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat = "January 2, 2006"
+  defaultTheme = "dark" # Using dark theme
+  disableThemeToggle = true # Disable theme toggle for minimal approach
+  ShowReadingTime = false # Minimal UI, removing extras
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false # Removing for minimal look
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  UseHugoToc = true
+  disableSpecial1stPost = true
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true # Enable for longer content pages
+  tocopen = false
+
+  [params.assets]
+    # disableHLJS = true
+    # disableFingerprinting = true
+    favicon = "<link / abs url>"
+    favicon16x16 = "<link / abs url>"
+    favicon32x32 = "<link / abs url>"
+    apple_touch_icon = "<link / abs url>"
+    safari_pinned_tab = "<link / abs url>"
+
+  [params.label]
+    text = "(⌐□_□) Bacharya_space"
+    icon = "/apple-touch-icon.png"
+    iconHeight = 35
+
+  [params.profileMode]
+    enabled = false
+    
+  [params.homeInfoParams]
+    Title = "Welcome"
+    Content = "A minimalist space for sharing my coding work, possessions, travels, books, projects, and CV."
+
+  [params.cover]
+    hidden = true
+    hiddenInList = true
+    hiddenInSingle = true
+
+[menu]
+  [[menu.main]]
+    identifier = "coding"
+    name = "coding"
+    url = "/coding/"
+    weight = 10
+  [[menu.main]]
+    identifier = "stuff"
+    name = "stuff i own"
+    url = "/stuff/"
+    weight = 20
+  [[menu.main]]
+    identifier = "travel"
+    name = "travels"
+    url = "/travel/"
+    weight = 30
+  [[menu.main]]
+    identifier = "books"
+    name = "books"
+    url = "/books/"
+    weight = 40
+  [[menu.main]]
+    identifier = "projects"
+    name = "projects"
+    url = "/projects/"
+    weight = 50
+  [[menu.main]]
+    identifier = "cv"
+    name = "cv"
+    url = "/cv/"
+    weight = 60
+
+# Syntax highlighting
+pygmentsUseClasses = true
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]

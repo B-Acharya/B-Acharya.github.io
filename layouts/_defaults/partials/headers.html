@@ -1,0 +1,32 @@
+{{- /* theme-toggle is enabled */}}
+{{- if (not site.Params.disableThemeToggle) }}
+{{- /* theme is light */}}
+{{- if (eq site.Params.defaultTheme "light") }}
+{{- /* SVG light theme icon */}}
+<header class="header">
+    <div class="logo">
+        {{- $label_text := (site.Params.label.text | default site.Title) }}
+        <a href="{{ "" | absLangURL }}">
+            {{- if site.Params.label.icon }}
+            <img src="{{- site.Params.label.icon -}}" height="{{- site.Params.label.iconHeight | default 30 -}}"
+                width="{{- site.Params.label.iconWidth | default 30 -}}" alt="" aria-label="logo">
+            {{- end -}}
+            {{- $label_text -}}
+        </a>
+    </div>
+    
+    {{- if (not site.Params.disableSearch) }}
+    <div class="search">
+        <input id="search-input" type="text" placeholder="{{ .Site.Params.searchPlaceholder | default `Search` }}" aria-label="search">
+        <div id="search-results" class="search-results"></div>
+    </div>
+    {{- end }}
+    
+    <nav class="menu">
+        {{- range site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{- end }}
+    </nav>
+</header>
+{{- end }}
+{{- end }}

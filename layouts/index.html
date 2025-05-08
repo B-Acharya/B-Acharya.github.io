@@ -1,0 +1,29 @@
+{{- define "main" }} {{- if (or .Content .Params.cover) }}
+<article class="first-entry home-info">
+  {{- if .Content }}
+  <div class="entry-content">{{ .Content }}</div>
+  {{- end }}
+</article>
+{{- end }} {{- $pages := where site.RegularPages "Type" "in"
+site.Params.mainSections }} {{- if and (gt (len $pages) 0)
+.Site.Params.homeInfoParams }}
+<section class="recent-posts">
+  <h2 class="section-header">{{ "Recent Posts" }}</h2>
+  {{- range first 5 (where site.RegularPages "Type" "in"
+  site.Params.mainSections) }}
+  <div class="post-entry">
+    <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <div class="post-meta">
+      {{- if .Date }}
+      <span>{{ .Date.Format site.Params.DateFormat }}</span>
+      {{- end }}
+    </div>
+    <div class="entry-content">
+      {{- if .Description }} {{ .Description | markdownify }} {{- else }} {{
+      .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }} {{-
+      end }}
+    </div>
+  </div>
+  {{- end }}
+</section>
+{{- end }} {{- end }}

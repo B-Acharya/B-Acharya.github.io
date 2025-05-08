@@ -1,9 +1,266 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+/* Override PaperMod for minimal dark theme with right-aligned content */
 
 :root {
-  --main-font: "Roboto Mono";
+  --theme: #121212;
+  --entry: #1e1e1e;
+  --primary: rgba(255, 255, 255, 0.87);
+  --secondary: rgba(255, 255, 255, 0.66);
+  --tertiary: rgba(255, 255, 255, 0.16);
+  --content: rgba(255, 255, 255, 0.87);
+  --hljs-bg: #2d2d2d;
+  --code-bg: #2d2d2d;
+  --border: #333;
+
+  /* Font customization */
+  --main-font:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Force right-aligned layout */
 body {
   font-family: var(--main-font);
+  background-color: var(--theme);
+  color: var(--primary);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Container layout - FORCE right alignment */
+.container {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding-left: 25% !important; /* This pushes all content to the right */
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Override any centering from the theme */
+header,
+main,
+footer,
+.main,
+.nav,
+.footer {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  max-width: 1024px !important;
+  width: 100% !important;
+}
+
+/* Links */
+a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Logo styling */
+.logo {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.logo a {
+  font-weight: 600;
+  display: block;
+  font-size: 1.5em;
+}
+
+.logo a span:first-child {
+  font-family: monospace;
+  letter-spacing: -1px;
+  margin-right: 8px;
+}
+
+/* Multi-row grid navigation */
+.menu {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 columns */
+  grid-gap: 15px !important;
+  margin-top: 20px !important;
+  width: 100% !important;
+}
+
+.menu a {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background-color: var(--entry) !important;
+  border-radius: 4px !important;
+  padding: 15px 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+.menu a:hover {
+  transform: translateY(-3px) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  text-decoration: none !important;
+}
+
+/* ASCII icons for menu items */
+.menu a::before {
+  font-family: monospace !important;
+  font-size: 1.5em !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+}
+
+/* Specific ASCII icons for each section */
+.menu a[href="/coding/"]::before {
+  content: "</>" !important;
+}
+
+.menu a[href="/stuff/"]::before {
+  content: "⚙️" !important;
+}
+
+.menu a[href="/travel/"]::before {
+  content: "✈️" !important;
+}
+
+.menu a[href="/books/"]::before {
+  content: "📚" !important;
+}
+
+.menu a[href="/projects/"]::before {
+  content: "🛠️" !important;
+}
+
+.menu a[href="/cv/"]::before {
+  content: "📄" !important;
+}
+
+/* Minimal post styling */
+.post-entry {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: none;
+  box-shadow: none;
+  background: var(--entry);
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.post-entry:hover {
+  transform: translateY(-2px);
+}
+
+.post-title {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: var(--secondary);
+}
+
+/* Section headers styling */
+.section-header {
+  border-bottom: 1px solid var(--tertiary);
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+}
+
+/* Code block styling */
+pre {
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+code {
+  color: #f48771;
+  background-color: var(--code-bg);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Footer styling */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+/* Remove unnecessary decorations */
+.nav {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Clean, minimal button styling */
+.button {
+  background: transparent;
+  border: 1px solid var(--tertiary);
+  border-radius: 4px;
+  color: var(--primary);
+  padding: 8px 16px;
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--border);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--entry);
+}
+
+/* Input and button styling */
+input,
+textarea,
+select {
+  background-color: var(--entry);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0 !important; /* Remove the padding on mobile */
+  }
+
+  .menu {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ) !important; /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    grid-template-columns: 1fr !important; /* Single column on very small screens */
+  }
 }
