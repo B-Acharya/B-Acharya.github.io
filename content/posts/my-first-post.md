@@ -5,3 +5,4 @@ title = 'HelloWorld!'
 +++
 
 - Cool now we have a website !
+- Mainly servers as a place where I can put my thoughts in one place.
