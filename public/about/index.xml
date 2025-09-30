@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Terminal</title>
-    <link>//localhost:1313/about/</link>
+    <link>/about/</link>
     <description>Recent content in Abouts on Terminal</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="//localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>//localhost:1313/about/about/</link>
+      <link>/about/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/about/about/</guid>
+      <guid>/about/about/</guid>
       <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World&lt;/h1&gt;&#xA;&lt;p&gt;Okay that took some time to figure out&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>//localhost:1313/about/example/</link>
+      <link>/about/example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/about/example/</guid>
+      <guid>/about/example/</guid>
       <description>&lt;h1 id=&#34;thats-one-way-to-add-a&#34;&gt;Thats one way to add a&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;first&lt;/li&gt;&#xA;&lt;li&gt;second&lt;/li&gt;&#xA;&lt;li&gt;third&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>
