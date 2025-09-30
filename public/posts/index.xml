@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Bacharya_space</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Bacharya_space</description>
-    <image>
-      <title>Bacharya_space</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
-    <generator>Hugo -- 0.147.2</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 07 May 2025 22:45:56 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <title>Posts on Terminal</title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on Terminal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>HelloWorld!</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Wed, 07 May 2025 22:45:56 +0200</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;Cool now we have a website !&lt;/li&gt;
-&lt;li&gt;Mainly servers as a place where I can put my thoughts in one place.&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <title></title>
+      <link>//localhost:1313/posts/example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/example/</guid>
+      <description>&lt;h1 id=&#34;thats-one-way-to-add-a&#34;&gt;Thats one way to add a&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;first&lt;/li&gt;&#xA;&lt;li&gt;second&lt;/li&gt;&#xA;&lt;li&gt;third&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
   </channel>
 </rss>
