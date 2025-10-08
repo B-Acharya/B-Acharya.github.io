@@ -1,13 +1,13 @@
-baseurl = "/"
+baseurl = "https://b-acharya.github.io/"
 languageCode = "en-us"
+theme = "terminal"
+
+[pagination]
+pagerSize = 5
 
 [caches]
   [caches.images]
     dir = ":cacheDir/images"
-# Add it only if you keep the theme in the `themes` directory.
-# Remove it if you use the theme as a remote Hugo Module.
-theme = "terminal"
-pagination.pagerSize = 5
 
 # Required for Chroma and the custom syntax highlighting.
 [markup.highlight]
@@ -112,10 +112,3 @@ pagination.pagerSize = 5
           name = "Books"
           url = "/books"
 
-[module]
-  # In case you would like to make changes to the theme and keep it locally in you repository,
-  # uncomment the line below (and correct the local path if necessary).
-  # --
-  # replacements = "github.com/panr/hugo-theme-terminal/v4 -> themes/terminal"
-[[module.imports]]
-  path = './'
