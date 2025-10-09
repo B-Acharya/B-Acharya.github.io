@@ -1,0 +1,35 @@
+/* Custom color scheme for better readability */
+:root {
+  /*
+   * Dark theme optimized for readability:
+   * - Background: Deep dark gray (not pure black to reduce eye strain)
+   * - Foreground: Soft white (not pure white to avoid halation effect)
+   * - Accent: Desaturated blue for good contrast without eye strain
+   */
+  --background: #0d1117;
+  --foreground: #c9d1d9;
+  --accent: #58a6ff;
+  --code-border: #30363d;
+}
+
+/* Ensure good contrast for links */
+a {
+  color: var(--accent);
+}
+
+/* Soften the border colors */
+img {
+  border-color: var(--accent);
+}
+
+/* Better code block styling */
+pre {
+  background: #161b22 !important;
+  border-color: var(--code-border);
+}
+
+code,
+kbd {
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+  border-color: var(--code-border);
+}
