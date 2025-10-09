@@ -9,9 +9,9 @@ I'm Bhargav Acharya, a PhD student at Bielefeld University specializing in Multi
 
 ## Background
 
-I hold a Master's degree in Intelligent Systems from Bielefeld University, where I developed a strong foundation in machine learning, cognitive computing, and neural networks. My master's thesis on deep learning methods for heart rate estimation received a grade of 1.1.
+I hold a Master's degree in Intelligent Systems from Bielefeld University, where I developed a strong foundation in machine learning, cognitive computing, and neural networks.
 
-Prior to my graduate studies, I worked as an Associate Software Engineer at Robert Bosch, where I specialized in ECU software integration and configuration management.
+Prior to my graduate studies, I worked as a Software Engineer at Robert Bosch.
 
 ## Research Interests
 
