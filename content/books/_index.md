@@ -79,4 +79,13 @@ date: 2025-01-08
   </div>
 </div>
 
+<div class="book-card">
+  <img src="https://en.wikipedia.org/wiki/File:Kite_runner.jpg" alt="Kite Runner" class="book-cover">
+  <div class="book-info">
+    <h3 class="book-title">Kite Runner</h3>
+    <p class="book-author">by Khaled Hosseini</p>
+    <a href="https://www.goodreads.com/book/show/17165596-the-kite-runner" target="_blank" class="book-link">View on Goodreads →</a>
+  </div>
+</div>
+
 </div>
