@@ -23,4 +23,4 @@ Prior to my graduate studies, I worked as a Software Engineer at Robert Bosch.
 
 ## Contact
 
-Feel free to reach out via [email](mailto:acharya28bhargav@gmail.com) or connect with me on [GitHub](https://github.com/B-Acharya).
+connect with me on [GitHub](https://github.com/B-Acharya).
