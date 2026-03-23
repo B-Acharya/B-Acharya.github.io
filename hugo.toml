@@ -1,6 +1,7 @@
 baseurl = "https://b-acharya.github.io/"
 languageCode = "en-us"
-theme = "terminal"
+title = "B-Acharya - Technical Manuscript"
+# theme = "terminal" # Disabled - using custom layouts
 
 [pagination]
 pagerSize = 5
@@ -81,7 +82,7 @@ pagerSize = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "Terminal"
+    title = "B-Acharya - Technical Manuscript"
 
     [languages.en.params]
       owner = ""
@@ -106,16 +107,24 @@ pagerSize = 5
           identifier = "about"
           name = "About"
           url = "/about"
+          pre = "person"
+          weight = 10
         [[languages.en.menu.main]]
           identifier = "resume"
           name = "Resume"
           url = "/about/resume"
+          pre = "description"
+          weight = 20
         [[languages.en.menu.main]]
           identifier = "blog"
           name = "Blog"
           url = "/blog"
+          pre = "inventory_2"
+          weight = 30
         [[languages.en.menu.main]]
           identifier = "books"
           name = "Books"
           url = "/books"
+          pre = "menu_book"
+          weight = 40
 

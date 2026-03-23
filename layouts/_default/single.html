@@ -1,0 +1,59 @@
+{{ define "title" }}bacharya@web:~/{{ .Section }}/{{ .Title }}{{ end }}
+
+{{ define "main" }}
+<!-- Page Header -->
+<div class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+
+    <!-- Command Prompt -->
+    <div class="terminal-prompt mt-4 mb-8">
+        <div class="terminal-prompt-line">
+            <span class="prompt-text">bacharya@web:~/{{ .Section }}$</span>
+            <span class="text-on-surface">cat {{ .File.BaseFileName }}.md</span>
+            <span class="cursor-blink"></span>
+        </div>
+    </div>
+    <div class="page-meta">
+        {{ if .Params.description }}
+        <p class="text-on-surface-variant">{{ .Params.description }}</p>
+        {{ end }}
+        <div class="text-right">
+            {{ if .Date }}
+            <p class="text-on-surface-variant">MODIFIED: {{ .Date.Format "2006-01-02 15:04" }}</p>
+            {{ end }}
+            {{ if .ReadingTime }}
+            <p class="text-secondary">READ_TIME: {{ .ReadingTime }} MIN</p>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<article class="content-prose">
+    {{ .Content }}
+</article>
+
+<!-- Tags if any -->
+{{ if .Params.tags }}
+<div class="mt-12 mb-8">
+    <p class="text-on-surface-variant text-xs uppercase mb-4">TAGS:</p>
+    <div class="flex flex-wrap gap-2">
+        {{ range .Params.tags }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+
+<!-- Navigation -->
+<div class="mt-8 flex gap-4">
+    {{ if .PrevInSection }}
+    <a href="{{ .PrevInSection.Permalink }}" class="btn-tertiary">← PREV</a>
+    {{ end }}
+    <a href="{{ .Section | absURL }}" class="btn-primary">LS /{{ .Section }}</a>
+    {{ if .NextInSection }}
+    <a href="{{ .NextInSection.Permalink }}" class="btn-tertiary">NEXT →</a>
+    {{ end }}
+</div>
+
+{{ end }}

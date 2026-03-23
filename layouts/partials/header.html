@@ -1,0 +1,26 @@
+<!-- TopAppBar - Terminal Title Bar -->
+<header class="header-bar">
+    <div class="flex items-center gap-4">
+        <span class="terminal-title">bacharya@web:~/{{ if .IsHome }}home{{ else }}{{ .Section }}{{ end }}</span>
+        <nav class="hidden md:flex gap-4">
+            {{ if .IsHome }}
+            <a class="nav-link nav-link-active" href="{{ .Site.BaseURL }}">cd /home</a>
+            {{ else }}
+            <a class="nav-link" href="{{ .Site.BaseURL }}">cd /home</a>
+            {{ end }}
+            {{ range .Site.Menus.main }}
+            <a class="nav-link {{ if $.IsMenuCurrent "main" . }}nav-link-active{{ end }}" href="{{ .URL }}">
+                {{ if eq .Identifier "blog" }}ls -l /{{ .Identifier }}
+                {{ else if eq .Identifier "about" }}cat /{{ .Identifier }}
+                {{ else if eq .Identifier "books" }}ls /{{ .Identifier }}
+                {{ else }}{{ .Name }}{{ end }}
+            </a>
+            {{ end }}
+        </nav>
+    </div>
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-sm cursor-pointer hover:bg-[#353534]">minimize</span>
+        <span class="material-symbols-outlined text-sm cursor-pointer hover:bg-[#353534]">fullscreen</span>
+        <span class="material-symbols-outlined text-sm cursor-pointer hover:bg-[#353534]">close</span>
+    </div>
+</header>

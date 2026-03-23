@@ -1,0 +1,30 @@
+{{ define "title" }}bacharya@web:~/{{ .Section }}{{ end }}
+
+{{ define "main" }}
+<!-- Page Header -->
+<div class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+
+    <!-- Command Prompt -->
+    <div class="terminal-prompt mt-4 mb-8">
+        <div class="terminal-prompt-line">
+            <span class="prompt-text">bacharya@web:~$</span>
+            <span class="text-on-surface">ls /{{ .Section }}</span>
+            <span class="cursor-blink"></span>
+        </div>
+    </div>
+    <div class="page-meta">
+        <p>9 ITEMS TOTAL</p>
+        <div class="text-right">
+            <p class="text-secondary">[BOOKS]</p>
+            <p>MODE: LIST_VIEW</p>
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content-prose">
+    {{ .Content }}
+</div>
+
+{{ end }}

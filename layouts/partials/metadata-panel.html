@@ -1,0 +1,42 @@
+<!-- Right Metadata Panel (Compilation Details) - Only shown on single pages with metadata -->
+{{ if .Params.showMetadata }}
+<aside class="metadata-panel">
+    <h3 class="font-mono text-[0.6875rem] font-bold uppercase tracking-widest mb-8 text-on-surface">Compilation_Details</h3>
+    <div class="space-y-12">
+        {{ if .Date }}
+        <div class="metadata-card">
+            <span class="font-mono text-[0.625rem] text-tertiary block mb-2">TEMPORAL_STATS</span>
+            <div class="space-y-4">
+                <div class="flex justify-between font-mono text-[0.6875rem]">
+                    <span class="opacity-50">Published</span>
+                    <span>{{ .Date.Format "2006.01.02" }}</span>
+                </div>
+                {{ if .Lastmod }}
+                <div class="flex justify-between font-mono text-[0.6875rem]">
+                    <span class="opacity-50">Updated</span>
+                    <span>{{ .Lastmod.Format "2006.01.02" }}</span>
+                </div>
+                {{ end }}
+                {{ if .ReadingTime }}
+                <div class="flex justify-between font-mono text-[0.6875rem]">
+                    <span class="opacity-50">Read_Time</span>
+                    <span>{{ .ReadingTime }}m</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        {{ if .Params.tags }}
+        <div class="p-6 border border-outline-variant/20">
+            <span class="font-mono text-[0.625rem] text-tertiary block mb-4">TAG_INDEX</span>
+            <div class="flex flex-wrap gap-2">
+                {{ range .Params.tags }}
+                <span class="font-mono text-[0.625rem] px-2 py-1 bg-surface-container">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</aside>
+{{ end }}

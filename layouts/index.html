@@ -1,0 +1,99 @@
+{{ define "title" }}bacharya@web:~/home{{ end }}
+
+{{ define "main" }}
+<!-- Page Header -->
+<div class="page-header">
+    <h1 class="page-title">BHARGAV ACHARYA</h1>
+
+    <!-- Command Prompt -->
+    <div class="terminal-prompt mt-4 mb-8">
+        <div class="terminal-prompt-line">
+            <span class="prompt-text">bacharya@web:~$</span>
+            <span class="text-on-surface">ls -la /home</span>
+            <span class="cursor-blink"></span>
+        </div>
+    </div>
+    <div class="page-meta">
+        <p>4 ITEMS TOTAL</p>
+        <div class="text-right">
+            <p class="text-secondary">[HOME]</p>
+            <p>MODE: DIRECTORY</p>
+        </div>
+    </div>
+</div>
+
+<!-- Directory Listing -->
+<table>
+    <thead>
+        <tr>
+            <th>PERMISSIONS</th>
+            <th>SIZE</th>
+            <th>MODIFIED</th>
+            <th>NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-on-surface-variant">drwxr-xr-x</td>
+            <td class="file-size">--</td>
+            <td class="text-on-surface-variant">{{ now.Format "Jan 02 15:04" }}</td>
+            <td class="file-name">
+                <a href="{{ "about" | absURL }}">about/</a>
+                <span class="text-on-surface-variant text-xs ml-4">Personal info and background</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-on-surface-variant">drwxr-xr-x</td>
+            <td class="file-size">{{ len (where .Site.RegularPages "Section" "blog") }}</td>
+            <td class="text-on-surface-variant">{{ now.Format "Jan 02 15:04" }}</td>
+            <td class="file-name">
+                <a href="{{ "blog" | absURL }}">blog/</a>
+                <span class="text-on-surface-variant text-xs ml-4">Technical writings and thoughts</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-on-surface-variant">drwxr-xr-x</td>
+            <td class="file-size">9</td>
+            <td class="text-on-surface-variant">{{ now.Format "Jan 02 15:04" }}</td>
+            <td class="file-name">
+                <a href="{{ "books" | absURL }}">books/</a>
+                <span class="text-on-surface-variant text-xs ml-4">Reading list and reviews</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-on-surface-variant">-rwxr-xr-x</td>
+            <td class="file-size">8.4K</td>
+            <td class="text-on-surface-variant">{{ now.Format "Jan 02 15:04" }}</td>
+            <td class="file-name">
+                <a href="{{ "about/resume" | absURL }}">resume.pdf</a>
+                <span class="text-on-surface-variant text-xs ml-4">Curriculum vitae</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- System Info -->
+<div class="content-card mt-12">
+    <span class="text-[10px] text-secondary uppercase tracking-widest mb-4 block">// SYSTEM_INFO</span>
+    <p class="text-on-surface text-sm leading-relaxed mb-4">
+        PhD student at Bielefeld University specializing in Multimodal Behavioral Signal Processing.
+        Research focus: Evaluating deep learning methods for remote photoplethysmography (rPPG) estimation.
+    </p>
+    <div class="mt-4 flex gap-6 text-xs text-on-surface-variant">
+        <span>EMAIL: <a href="mailto:acharya28bhargav@gmail.com" class="text-primary hover:underline">acharya28bhargav@gmail.com</a></span>
+        <span>GITHUB: <a href="https://github.com/B-Acharya" class="text-primary hover:underline">B-Acharya</a></span>
+        <span>LINKEDIN: <a href="https://linkedin.com/in/bhargav-acharya-42a33215b" class="text-primary hover:underline">bhargav-acharya</a></span>
+    </div>
+</div>
+
+<!-- ASCII Art -->
+<pre class="text-primary text-[10px] mt-12 mb-8 overflow-x-auto leading-tight">
+    _/\/\/\/\/\___     __________     _____/\/\_____     ___/\/\/\/\/\_     _/\/\____/\/\_     _____/\/\_____     _/\/\/\/\/\___     _____/\/\_____     _/\/\____/\/\_     _____/\/\_____
+    _/\/\____/\/\_     __________     ___/\/\/\/\___     _/\/\_________     _/\/\____/\/\_     ___/\/\/\/\___     _/\/\____/\/\_     ___/\/\/\/\___     _/\/\____/\/\_     ___/\/\/\/\___
+   _/\/\/\/\/\___     _/\/\/\/\_     _/\/\____/\/\_     _/\/\_________     _/\/\/\/\/\/\_     _/\/\____/\/\_     _/\/\/\/\/\___     _/\/\____/\/\_     ___/\/\/\/\___     _/\/\____/\/\_
+  _/\/\____/\/\_     __________     _/\/\/\/\/\/\_     _/\/\_________     _/\/\____/\/\_     _/\/\/\/\/\/\_     _/\/\__/\/\___     _/\/\/\/\/\/\_     _____/\/\_____     _/\/\/\/\/\/\_
+ _/\/\/\/\/\___     __________     _/\/\____/\/\_     ___/\/\/\/\/\_     _/\/\____/\/\_     _/\/\____/\/\_     _/\/\____/\/\_     _/\/\____/\/\_     _____/\/\_____     _/\/\____/\/\_
+______________     __________     ______________     ______________     ______________     ______________     ______________     ______________     ______________     ______________
+</pre>
+
+{{ end }}

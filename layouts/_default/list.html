@@ -1,0 +1,58 @@
+{{ define "title" }}bacharya@web:~/{{ .Section }}{{ end }}
+
+{{ define "main" }}
+<!-- Page Header -->
+<div class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+
+    <!-- Command Prompt -->
+    <div class="terminal-prompt mt-4 mb-8">
+        <div class="terminal-prompt-line">
+            <span class="prompt-text">bacharya@web:~$</span>
+            <span class="text-on-surface">{{ if eq .Section "blog" }}ls -la /{{ .Section }}{{ else if eq .Section "books" }}ls /{{ .Section }}{{ else }}ls /{{ .Section }}{{ end }}</span>
+            <span class="cursor-blink"></span>
+        </div>
+    </div>
+    <div class="page-meta">
+        <p>{{ len .Pages }} {{ if eq (len .Pages) 1 }}ITEM{{ else }}ITEMS{{ end }} TOTAL</p>
+        <div class="text-right">
+            <p class="text-secondary">[{{ upper .Section }}]</p>
+            <p>MODE: LIST_VIEW</p>
+        </div>
+    </div>
+</div>
+
+<!-- Content if any -->
+{{ if .Content }}
+<div class="content-prose mb-12">
+    {{ .Content }}
+</div>
+{{ end }}
+
+<!-- List as Terminal Output -->
+{{ if .Pages }}
+<table>
+    <thead>
+        <tr>
+            <th>PERMISSIONS</th>
+            <th>SIZE</th>
+            <th>MODIFIED</th>
+            <th>NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ range .Pages }}
+        <tr>
+            <td class="text-on-surface-variant">-rw-r--r--</td>
+            <td class="file-size">{{ if .ReadingTime }}{{ .ReadingTime }}min{{ else }}--{{ end }}</td>
+            <td class="text-on-surface-variant">{{ if .Date }}{{ .Date.Format "Jan 02 15:04" }}{{ else }}--{{ end }}</td>
+            <td class="file-name">
+                <a href="{{ .Permalink }}">{{ .Title }}{{ if eq .Section "blog" }}.md{{ end }}</a>
+            </td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
+{{ end }}
+
+{{ end }}

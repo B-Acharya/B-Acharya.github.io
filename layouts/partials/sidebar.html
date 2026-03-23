@@ -1,0 +1,36 @@
+<!-- Sidebar - Directory Tree -->
+<aside class="sidebar">
+    <div class="mb-8">
+        <div class="sidebar-title">DIRECTORY_TREE</div>
+        <div class="sidebar-subtitle">v2.0.4-stable</div>
+    </div>
+
+    <nav class="flex flex-col gap-2">
+        <a class="sidebar-link {{ if .IsHome }}sidebar-link-active{{ end }}" href="{{ .Site.BaseURL }}">
+            <span class="material-symbols-outlined text-sm">home</span>
+            <span>cd /home</span>
+        </a>
+
+        {{ range .Site.Menus.main }}
+        {{ if ne .Identifier "resume" }}
+        <a class="sidebar-link {{ if $.IsMenuCurrent "main" . }}sidebar-link-active{{ end }}" href="{{ .URL }}">
+            <span class="material-symbols-outlined text-sm">{{ if .Pre }}{{ .Pre }}{{ else }}description{{ end }}</span>
+            <span>{{ if eq .Identifier "blog" }}ls -la /{{ .Identifier }}
+                  {{ else if eq .Identifier "about" }}ls -la /About
+                  {{ else if eq .Identifier "books" }}ls /{{ .Identifier }}
+                  {{ else }}{{ .Name }}{{ end }}</span>
+        </a>
+        {{ end }}
+        {{ end }}
+    </nav>
+
+    <div class="mt-auto pt-4 border-t border-outline-variant/20">
+        <div class="p-4 bg-surface-container-low mb-4">
+            <p class="text-[10px] text-on-surface-variant mb-2">// SYSTEM_HEALTH</p>
+            <div class="w-full bg-surface-container-highest h-1">
+                <div class="bg-primary-container h-full" style="width: 84%"></div>
+            </div>
+            <p class="text-[10px] text-primary-container mt-1">Uptime: 99.9%</p>
+        </div>
+    </div>
+</aside>

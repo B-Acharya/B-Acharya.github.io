@@ -1,0 +1,12 @@
+<!-- Footer - Command Bar -->
+<footer class="footer">
+    <div class="flex items-center gap-4">
+        <span class="text-secondary">MAN(1) BLOG_SYSTEM - {{ now.Year }} COPYLEFT (C)</span>
+        <span class="hidden sm:inline text-on-surface-variant/40">+-------+</span>
+    </div>
+    <div class="flex gap-4">
+        <a class="footer-link" href="{{ .Site.BaseURL }}">ROOT</a>
+        <a class="footer-link" href="{{ "about" | absURL }}">REBOOT</a>
+        <a class="footer-link text-secondary underline" href="#">EXIT</a>
+    </div>
+</footer>
