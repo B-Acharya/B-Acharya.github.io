@@ -6,7 +6,7 @@
     <h1 class="page-title">{{ .Title }}</h1>
 
     <!-- Command Prompt -->
-    <div class="terminal-prompt mt-4 mb-8">
+    <div class="terminal-prompt" style="margin-top: 1rem; margin-bottom: 2rem;">
         <div class="terminal-prompt-line">
             <span class="prompt-text">bacharya@web:~/{{ .Section }}$</span>
             <span class="text-on-surface">cat {{ .File.BaseFileName }}.md</span>
@@ -17,7 +17,7 @@
         {{ if .Params.description }}
         <p class="text-on-surface-variant">{{ .Params.description }}</p>
         {{ end }}
-        <div class="text-right">
+        <div style="text-align: right;">
             {{ if .Date }}
             <p class="text-on-surface-variant">MODIFIED: {{ .Date.Format "2006-01-02 15:04" }}</p>
             {{ end }}
@@ -35,9 +35,9 @@
 
 <!-- Tags if any -->
 {{ if .Params.tags }}
-<div class="mt-12 mb-8">
-    <p class="text-on-surface-variant text-xs uppercase mb-4">TAGS:</p>
-    <div class="flex flex-wrap gap-2">
+<div style="margin-top: 3rem; margin-bottom: 2rem;">
+    <p class="text-on-surface-variant uppercase" style="font-size: 0.75rem; margin-bottom: 1rem;">TAGS:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
         {{ range .Params.tags }}
         <span class="tag">{{ . }}</span>
         {{ end }}
@@ -46,7 +46,7 @@
 {{ end }}
 
 <!-- Navigation -->
-<div class="mt-8 flex gap-4">
+<div style="margin-top: 2rem; display: flex; gap: 1rem;">
     {{ if .PrevInSection }}
     <a href="{{ .PrevInSection.Permalink }}" class="btn-tertiary">← PREV</a>
     {{ end }}
