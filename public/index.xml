@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Terminal</title>
-    <link>/</link>
-    <description>Recent content on Terminal</description>
+    <title>B-Acharya - Technical Manuscript</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on B-Acharya - Technical Manuscript</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>/about/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/about/about/</guid>
-      <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World&lt;/h1&gt;&#xA;&lt;p&gt;Okay that took some time to figure out&lt;/p&gt;</description>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/about/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/about/</guid>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;&#xA;&lt;p&gt;I&amp;rsquo;m Bhargav Acharya, a PhD student at Bielefeld University specializing in Multimodal Behavioral Signal Processing. My research focuses on evaluating deep learning methods for remote photoplethysmography (rPPG) estimation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;I hold a Master&amp;rsquo;s degree in Intelligent Systems from Bielefeld University, where I developed a strong foundation in machine learning, cognitive computing, and neural networks.&lt;/p&gt;&#xA;&lt;p&gt;Prior to my graduate studies, I worked as a Software Engineer at Robert Bosch.&lt;/p&gt;</description>
     </item>
     <item>
-      <title></title>
-      <link>/about/example/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/about/example/</guid>
-      <description>&lt;h1 id=&#34;thats-one-way-to-add-a&#34;&gt;Thats one way to add a&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;first&lt;/li&gt;&#xA;&lt;li&gt;second&lt;/li&gt;&#xA;&lt;li&gt;third&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>/blog/secongecample/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/blog/secongecample/</guid>
-      <description>&lt;h1 id=&#34;second-way-to-do-ti&#34;&gt;Second way to do ti&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;first&lt;/li&gt;&#xA;&lt;li&gt;second&lt;/li&gt;&#xA;&lt;li&gt;third&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+      <title>Resume</title>
+      <link>http://localhost:1313/about/resume/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/resume/</guid>
+      <description>&lt;h1 id=&#34;bhargav-acharya&#34;&gt;Bhargav Acharya&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:acharya28bhargav@gmail.com&#34;&gt;acharya28bhargav@gmail.com&lt;/a&gt;&#xA;&lt;strong&gt;Location:&lt;/strong&gt; Bielefeld, Germany&#xA;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a href=&#34;https://github.com/B-Acharya&#34;&gt;github.com/B-Acharya&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;h3 id=&#34;master-of-science-in-intelligent-systems&#34;&gt;Master of Science in Intelligent Systems&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Bielefeld University&lt;/strong&gt; | Bielefeld, Germany&#xA;&lt;em&gt;October 2019 – December 2022&lt;/em&gt;&#xA;&lt;strong&gt;Grade:&lt;/strong&gt; 1.3&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Coursework:&lt;/strong&gt; Machine Learning, Cognitive Computing, Neural Networks, and Big Data&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Master Thesis:&lt;/strong&gt; Deep learning methods for heart rate estimation (Grade: 1.1)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;bachelor-of-engineering-in-electronics-and-communication&#34;&gt;Bachelor of Engineering in Electronics and Communication&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Bangalore Institute of Technology (VTU)&lt;/strong&gt; | Bengaluru, India&#xA;&lt;em&gt;August 2014 – June 2018&lt;/em&gt;&#xA;&lt;strong&gt;Grade:&lt;/strong&gt; 76% (First Class Distinction)&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

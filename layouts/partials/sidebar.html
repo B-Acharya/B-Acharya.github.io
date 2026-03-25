@@ -1,20 +1,20 @@
 <!-- Sidebar - Directory Tree -->
 <aside class="sidebar">
-    <div class="mb-8">
+    <div style="margin-bottom: 2rem;">
         <div class="sidebar-title">DIRECTORY_TREE</div>
         <div class="sidebar-subtitle">v2.0.4-stable</div>
     </div>
 
-    <nav class="flex flex-col gap-2">
+    <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
         <a class="sidebar-link {{ if .IsHome }}sidebar-link-active{{ end }}" href="{{ .Site.BaseURL }}">
-            <span class="material-symbols-outlined text-sm">home</span>
+            <span style="font-weight: 700;">~</span>
             <span>cd /home</span>
         </a>
 
         {{ range .Site.Menus.main }}
         {{ if ne .Identifier "resume" }}
         <a class="sidebar-link {{ if $.IsMenuCurrent "main" . }}sidebar-link-active{{ end }}" href="{{ .URL }}">
-            <span class="material-symbols-outlined text-sm">{{ if .Pre }}{{ .Pre }}{{ else }}description{{ end }}</span>
+            <span style="font-weight: 700;">{{ if eq .Identifier "blog" }}>>{{ else if eq .Identifier "about" }}?{{ else if eq .Identifier "books" }}[]{{ else }}>{{ end }}</span>
             <span>{{ if eq .Identifier "blog" }}ls -la /{{ .Identifier }}
                   {{ else if eq .Identifier "about" }}ls -la /About
                   {{ else if eq .Identifier "books" }}ls /{{ .Identifier }}
@@ -24,13 +24,13 @@
         {{ end }}
     </nav>
 
-    <div class="mt-auto pt-4 border-t border-outline-variant/20">
-        <div class="p-4 bg-surface-container-low mb-4">
-            <p class="text-[10px] text-on-surface-variant mb-2">// SYSTEM_HEALTH</p>
-            <div class="w-full bg-surface-container-highest h-1">
-                <div class="bg-primary-container h-full" style="width: 84%"></div>
+    <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(59, 75, 55, 0.2);">
+        <div style="padding: 1rem; background-color: var(--surface-container-low); margin-bottom: 1rem;">
+            <p style="font-size: 0.625rem; color: var(--on-surface-variant); margin-bottom: 0.5rem;">// SYSTEM_HEALTH</p>
+            <div style="width: 100%; background-color: var(--surface-container-highest); height: 0.25rem;">
+                <div style="background-color: var(--primary-container); height: 100%; width: 84%;"></div>
             </div>
-            <p class="text-[10px] text-primary-container mt-1">Uptime: 99.9%</p>
+            <p style="font-size: 0.625rem; color: var(--primary-container); margin-top: 0.25rem;">Uptime: 99.9%</p>
         </div>
     </div>
 </aside>

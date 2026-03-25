@@ -1,0 +1,821 @@
+/**
+ * DIGITAL BRUTALIST MANIFESTO - The Monolithic Console
+ *
+ * Philosophy: Raw, high-contrast terminal computing aesthetic
+ * Rejects softness in favor of engineered precision
+ * Zero radius, instant transitions, phosphor green authority
+ */
+
+/* ============================================================================
+   1. CSS VARIABLES - THE VOID & PHOSPHOR PALETTE
+   ============================================================================ */
+
+:root {
+    /* Core Brutalist Colors */
+    --primary: #00FF41;              /* Phosphor Green - High Alert */
+    --secondary: #FFB000;            /* Amber Alert */
+    --tertiary: #FFC18C;             /* Accent Orange */
+
+    /* The Void */
+    --background: #131313;           /* Deep Absolute Black */
+    --surface: #131313;
+    --surface-dim: #131313;
+    --surface-bright: #3A3939;
+    --surface-container-lowest: #0E0E0E;
+    --surface-container-low: #1C1B1B;
+    --surface-container: #201F1F;
+    --surface-container-high: #2A2A2A;
+    --surface-container-highest: #353534;
+
+    /* Text Colors */
+    --on-surface: #E5E2E1;           /* High readability */
+    --on-surface-variant: #B9CCB2;   /* Dimmed secondary */
+    --on-primary: #003907;
+    --on-background: #E5E2E1;
+
+    /* Primary Variants */
+    --primary-container: #00FF41;
+    --primary-fixed: #72FF70;
+    --primary-fixed-dim: #00E639;
+
+    /* Secondary Variants */
+    --secondary-container: #FDAF00;
+    --secondary-fixed: #FFDDAF;
+    --secondary-fixed-dim: #FFBA43;
+
+    /* Outline */
+    --outline: #84967E;
+    --outline-variant: #3B4B37;
+
+    /* Error */
+    --error: #FFB4AB;
+    --error-container: #93000A;
+
+    /* Inverse */
+    --inverse-surface: #E5E2E1;
+    --inverse-on-surface: #313030;
+    --inverse-primary: #006E16;
+
+    /* Typography */
+    --font-mono: 'Space Grotesk', monospace;
+
+    /* Spacing */
+    --spacing-2: 0.5rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 1.75rem;
+    --spacing-12: 3rem;
+
+    /* Border Radius - ALWAYS ZERO */
+    --radius: 0px;
+}
+
+/* ============================================================================
+   LIGHT THEME - Inverted Brutalist Console
+   ============================================================================ */
+
+html.light {
+    /* Core Brutalist Colors (Light Mode) */
+    --primary: #00CC33;              /* Darker Green for readability */
+    --secondary: #CC8800;            /* Darker Amber */
+    --tertiary: #CC8855;             /* Darker Orange */
+
+    /* The Bright Void */
+    --background: #F5F5F5;           /* Light gray background */
+    --surface: #F5F5F5;
+    --surface-dim: #E8E8E8;
+    --surface-bright: #FFFFFF;
+    --surface-container-lowest: #FFFFFF;
+    --surface-container-low: #ECECEC;
+    --surface-container: #E0E0E0;
+    --surface-container-high: #D8D8D8;
+    --surface-container-highest: #C8C8C8;
+
+    /* Text Colors (Inverted) */
+    --on-surface: #1A1A1A;           /* Dark text on light */
+    --on-surface-variant: #3A5A3A;   /* Dark green tint */
+    --on-primary: #FFFFFF;
+    --on-background: #1A1A1A;
+
+    /* Primary Variants */
+    --primary-container: #00CC33;
+    --primary-fixed: #00AA2B;
+    --primary-fixed-dim: #008822;
+
+    /* Secondary Variants */
+    --secondary-container: #CC8800;
+    --secondary-fixed: #AA7000;
+    --secondary-fixed-dim: #885800;
+
+    /* Outline */
+    --outline: #5A6A5A;
+    --outline-variant: #B0C0B0;
+
+    /* Error */
+    --error: #CC3333;
+    --error-container: #FFCCCC;
+
+    /* Inverse */
+    --inverse-surface: #1A1A1A;
+    --inverse-on-surface: #E5E2E1;
+    --inverse-primary: #00FF41;
+}
+
+/* Light theme body background */
+html.light body {
+    background-color: #F0F0F0;
+    /* Subtle light scanline effect */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.01), rgba(0, 200, 50, 0.01), rgba(0, 0, 0, 0.01));
+}
+
+/* ============================================================================
+   2. RESET & BASE STYLES
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--on-surface);
+    background-color: #0d0d0d;
+    /* CRT Scanline Effect */
+    background-image:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    min-height: 100vh;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--primary-container);
+    color: var(--on-primary);
+}
+
+/* ============================================================================
+   3. TYPOGRAPHY - THE MONO-GRID
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--on-surface);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: var(--on-surface);
+    text-decoration: none;
+    transition: none; /* Instant - no smooth transitions */
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* Code & Pre */
+code, pre {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    background-color: var(--surface-container);
+    border-radius: var(--radius);
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--outline-variant);
+    border-left: 4px solid var(--primary);
+}
+
+code {
+    padding: 0.2em 0.4em;
+}
+
+pre code {
+    padding: 0;
+    background-color: transparent;
+}
+
+/* ============================================================================
+   4. LAYOUT - THE TERMINAL STRUCTURE
+   ============================================================================ */
+
+/* Header - TopAppBar (Terminal Title Bar) */
+.header-bar {
+    background-color: var(--background);
+    color: var(--primary);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--outline-variant);
+}
+
+.terminal-title {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Navigation Links */
+.nav-link {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--on-surface);
+    padding: 0.25rem 0.5rem;
+    transition: none;
+}
+
+.nav-link:hover {
+    background-color: var(--surface-container-highest);
+    color: var(--primary);
+}
+
+.nav-link-active {
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+}
+
+/* Sidebar - Directory Tree */
+.sidebar {
+    display: none;
+    background-color: var(--background);
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 16rem;
+    border-right: 1px solid var(--outline-variant);
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 4rem;
+    overflow-y: auto;
+    z-index: 40;
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        display: flex;
+    }
+}
+
+.sidebar-title {
+    color: var(--primary);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-subtitle {
+    color: var(--on-surface-variant);
+    font-size: 0.625rem;
+    margin-bottom: 2rem;
+}
+
+/* Sidebar Links */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--on-surface);
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: none;
+}
+
+.sidebar-link:hover {
+    background-color: var(--surface-container-highest);
+}
+
+.sidebar-link-active {
+    background-color: var(--primary);
+    color: var(--background);
+    font-weight: 700;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 0;
+    min-height: 100vh;
+    padding: 1.5rem;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+    .main-content {
+        margin-left: 16rem;
+    }
+}
+
+/* Footer - Command Bar */
+.footer {
+    background-color: var(--background);
+    color: var(--secondary);
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 50;
+    border-top: 1px solid var(--outline-variant);
+}
+
+.footer-link {
+    color: var(--on-surface-variant);
+    transition: none;
+}
+
+.footer-link:hover {
+    color: var(--primary);
+}
+
+/* ============================================================================
+   5. COMPONENTS - BRUTALIST UI ELEMENTS
+   ============================================================================ */
+
+/* Buttons - The Bracket Method */
+.btn-primary {
+    display: inline-block;
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: none;
+}
+
+.btn-primary::before {
+    content: '[ ';
+}
+
+.btn-primary::after {
+    content: ' ]';
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+
+.btn-tertiary {
+    display: inline-block;
+    color: var(--on-surface);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: none;
+}
+
+.btn-tertiary:hover {
+    color: var(--primary);
+}
+
+/* Terminal Prompt Input */
+.terminal-prompt {
+    background-color: var(--surface-container-lowest);
+    padding: 1rem;
+    border: 1px solid var(--outline-variant);
+    margin: 2rem 0;
+}
+
+.terminal-prompt-line {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+}
+
+.prompt-text {
+    margin-right: 0.5rem;
+}
+
+.cursor-blink {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background-color: var(--primary);
+    vertical-align: middle;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* Cards & Content Blocks */
+.content-card {
+    background-color: var(--surface-container-low);
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.featured-card {
+    background-color: var(--surface-container-low);
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary);
+}
+
+/* Tags & Chips - Bracketed Style */
+.tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: var(--secondary);
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid var(--secondary);
+}
+
+.tag::before {
+    content: '[';
+}
+
+.tag::after {
+    content: ']';
+}
+
+/* Tables - Terminal ls -l Style */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    margin: 2rem 0;
+}
+
+thead {
+    color: var(--on-surface-variant);
+    border-bottom: 1px solid var(--outline-variant);
+}
+
+th {
+    text-align: left;
+    padding: 0.5rem 0.25rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(59, 75, 55, 0.1);
+    transition: none;
+}
+
+tbody tr:hover {
+    background-color: var(--surface-container-low);
+}
+
+td {
+    padding: 0.75rem 0.25rem;
+}
+
+td.file-size {
+    color: var(--secondary);
+}
+
+td.file-name {
+    font-weight: 700;
+}
+
+td.file-name:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* ============================================================================
+   6. CONTENT STYLING
+   ============================================================================ */
+
+/* Prose Content */
+.content-prose {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--on-surface);
+    max-width: 72ch;
+}
+
+.content-prose h1,
+.content-prose h2,
+.content-prose h3 {
+    color: var(--on-surface);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content-prose h2::before {
+    content: '> ';
+    color: var(--primary);
+}
+
+.content-prose a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.content-prose a:hover {
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+
+.content-prose ul,
+.content-prose ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content-prose li {
+    margin-bottom: 0.5rem;
+}
+
+.content-prose blockquote {
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--on-surface-variant);
+    font-style: italic;
+}
+
+/* List Items */
+.list-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--outline-variant);
+}
+
+.list-item:hover {
+    background-color: var(--surface-container-low);
+    padding-left: 1rem;
+    margin-left: -1rem;
+    padding-right: 1rem;
+    margin-right: -1rem;
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--outline-variant);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-title::before {
+    content: '> ';
+    color: var(--primary);
+}
+
+.page-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.625rem;
+    color: var(--on-surface-variant);
+    text-transform: uppercase;
+}
+
+/* ============================================================================
+   7. BOOK CARDS - BRUTALIST STYLE
+   ============================================================================ */
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.book-card {
+    background-color: var(--surface-container-low);
+    padding: 1rem;
+    border: 1px solid var(--outline-variant);
+    transition: none;
+}
+
+.book-card:hover {
+    border-color: var(--primary);
+    background-color: var(--surface-container);
+}
+
+.book-cover {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    filter: contrast(1.2) brightness(0.9);
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.book-title {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--on-surface);
+    text-transform: uppercase;
+}
+
+.book-author {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--on-surface-variant);
+}
+
+.book-author::before {
+    content: 'by ';
+    color: var(--on-surface-variant);
+    opacity: 0.5;
+}
+
+.book-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.book-link:hover {
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+
+/* ============================================================================
+   8. UTILITY CLASSES
+   ============================================================================ */
+
+/* Spacing */
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-8 { margin-top: 2rem; }
+.mt-12 { margin-top: 3rem; }
+
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+
+/* Text */
+.uppercase { text-transform: uppercase; }
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-muted { color: var(--on-surface-variant); }
+
+/* Flex */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+
+/* Grid */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+
+@media (min-width: 768px) {
+    .md\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Visibility */
+.hidden { display: none; }
+
+@media (min-width: 768px) {
+    .md\\:flex { display: flex; }
+}
+
+/* Max Width */
+.max-w-5xl {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================================================
+   9. SPECIAL EFFECTS - CRT AESTHETICS
+   ============================================================================ */
+
+/* Scanline Overlay */
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 255, 65, 0.02) 50%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    pointer-events: none;
+}
+
+/* Phosphor Glow Effect */
+.glow {
+    text-shadow: 0 0 10px var(--primary);
+}
+
+/* ASCII Divider */
+.ascii-divider {
+    font-family: var(--font-mono);
+    color: var(--outline-variant);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.ascii-divider::before {
+    content: '+------------------------+';
+}
+
+/* ============================================================================
+   10. RESPONSIVE BREAKPOINTS
+   ============================================================================ */
+
+/* Mobile: Base styles */
+
+/* Tablet: 768px */
+@media (min-width: 768px) {
+    h1 { font-size: 4rem; }
+    .main-content { padding: 2rem; }
+}
+
+/* Desktop: 1024px */
+@media (min-width: 1024px) {
+    h1 { font-size: 5rem; }
+}
