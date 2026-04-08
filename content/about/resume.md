@@ -5,7 +5,6 @@ date: 2025-01-08
 
 # Bhargav Acharya
 
-**Email:** acharya28bhargav@gmail.com
 **Location:** Bielefeld, Germany
 **GitHub:** [github.com/B-Acharya](https://github.com/B-Acharya)
 
